@@ -32,3 +32,4 @@ echo "- Update frontend API URLs"
 echo ""
 
 echo "📖 See DEPLOYMENT_GUIDE.md for detailed instructions"
+

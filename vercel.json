@@ -18,5 +18,11 @@
   ],
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "functions": {
+    "server/app.js": {
+      "maxDuration": 30
+    }
+  },
+  "buildCommand": "echo 'No build required for Node.js server'"
 }

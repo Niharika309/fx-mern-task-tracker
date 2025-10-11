@@ -7,7 +7,7 @@ const authRoutes = require('./routes/auth');
 const taskRoutes = require('./routes/tasks');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3001;
 
 // Connect to MongoDB
 connectDB();
@@ -19,6 +19,20 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
+
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'MERN Task Tracker API',
+    version: '1.0.0',
+    status: 'OK',
+    endpoints: {
+      auth: '/api/auth',
+      tasks: '/api/tasks',
+      health: '/api/health'
+    }
+  });
+});
 
 // Health check
 app.get('/api/health', (req, res) => {
